@@ -56,7 +56,7 @@ EOF
 resource "aws_ssm_resource_data_sync" "foo" {
   name = "foo"
 
-  s3_destination = {
+  s3_destination {
     bucket_name = "${aws_s3_bucket.hoge.bucket}"
     region      = "${aws_s3_bucket.hoge.region}"
   }
@@ -72,7 +72,7 @@ The following arguments are supported:
 
 ## s3_destination
 
-`s3_destination` supports the following:
+`s3_destination` block supports the following:
 
 * `bucket_name` - (Required) Name of S3 bucket where the aggregated data is stored.
 * `region` - (Required) Region with the bucket targeted by the Resource Data Sync.
